@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Instant Translator",
+  "version": "1.0",
+  "description": "Traduit le texte sélectionné dans une bulle sur la page.",
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
